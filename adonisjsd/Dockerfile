@@ -1,16 +1,5 @@
-FROM ubuntu
-
-RUN apt update && \
-    apt upgrade -y && \
-    apt install git -y && \
-    apt install nodejs -y && \
-    apt install npm -y && \
-    nodejs -v && npm -v && \
-    npm i --global @adonisjs/cli && \
-    rm -rf /var/lib/apt/lists/*
-
-EXPOSE 3333
-
+FROM node:8.14-alpine
+RUN apk add --update git -y && npm i --global @adonisjs/cli 
 WORKDIR /app
-
-ENTRYPOINT [ "adonis"]
+EXPOSE 3333
+ENTRYPOINT ["adonis"]
