@@ -1,0 +1,1 @@
+alias adonis='docker container run -v "$(pwd)":/app -p 3333:3333 -ti --rm b1r7e1d/adonis'
